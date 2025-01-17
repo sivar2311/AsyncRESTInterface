@@ -8,6 +8,7 @@ const char* WIFI_PASS    = "";
 
 const int   server_port = 80;
 const char* page_route  = "/settings.html";
+const char* page_name   = "Settings";
 const char* api_route   = "/api/v1/settings";
 
 AsyncWebServer server(server_port);
@@ -34,20 +35,10 @@ void setupWiFi() {
 
 void setupWebServer() {
     server.begin();
-
-    //optional
-    server.onNotFound([](AsyncWebServerRequest* req) { req->send(200, "text/html", "<a href=\""+String(page_route)+"\">Einstellungen</a>"); });
-    Serial.printf("Server started on port http://%s:%d\r\n", WiFi.localIP().toString().c_str(), server_port);
 }
 
 void setupRESTInterface() {
-    interface.begin(page_route, api_route, settings);
-
-    // optional
-    interface.onChange([](RESTSettings& settings){
-        Serial.println("Einstellugen wurden geändert!");
-    });
-    Serial.printf("REST Interface started.\r\nOpen your webbrowser and navigate to http://%s:%d%s.html\r\n", WiFi.localIP().toString().c_str(), server_port, page_route);
+    interface.begin(page_route, api_route, settings, page_name);
 }
 
 void setup() {
