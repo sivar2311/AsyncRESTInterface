@@ -1,0 +1,30 @@
+{
+    "name": "AsyncRESTInterface",
+    "version": "0.0.1",
+    "homepage": "https://github.com/sivar2311/AsyncRESTInterface",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/sivar2311/AsyncRESTInterface.git"
+    },    
+    "authors": [
+        {
+            "name": "Boris Jäger",
+            "maintainer": true
+        }
+    ],
+    "platforms": [
+        "espressif32",
+        "espressif8266"
+    ],
+    "frameworks": [
+        "arduino"
+    ],
+    "dependencies": [
+        {
+            "owner": "mathieucarbou",
+            "name": "AsyncWebServer",
+            "version": "^3.6.0",
+            "platforms": "espressif32"
+        }
+    ]
+}
