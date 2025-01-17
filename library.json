@@ -25,6 +25,13 @@
             "name": "AsyncWebServer",
             "version": "^3.6.0",
             "platforms": "espressif32"
+        },
+        {
+            "owner": "bblanchon",
+            "name":"ArduinoJson",
+            "version" : "^7.0.0",
+            "platforms" : "espressif32"
+        
         }
     ]
 }
