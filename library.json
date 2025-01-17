@@ -22,7 +22,7 @@
     "dependencies": [
         {
             "owner": "mathieucarbou",
-            "name": "AsyncWebServer",
+            "name": "ESPAsyncWebServer",
             "version": "^3.6.0",
             "platforms": "espressif32"
         },
