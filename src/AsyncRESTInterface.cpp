@@ -29,11 +29,12 @@ AsyncRESTInterface::AsyncRESTInterface(AsyncWebServer* server)
     : server(server) {
 }
 
-void AsyncRESTInterface::begin(const String& page_route, const String& api_route, RESTSettings& settings) {
+void AsyncRESTInterface::begin(const String& page_route, const String& api_route, RESTSettings& settings, const String& page_name) {
     if (!server) return;
     this->settings   = &settings;
     this->api_route  = api_route;
     this->page_route = page_route;
+    this->page_name  = page_name;
 
     // GET (html page)
 
@@ -41,6 +42,7 @@ void AsyncRESTInterface::begin(const String& page_route, const String& api_route
         req->send(200, "text/html", webPage, [this](const String& param) {
             String value = "";
             if (param == "SETTINGS_URL") value = this->api_route;
+            if (param == "PAGE_NAME") value = this->page_name;
             return value;
         });
     });

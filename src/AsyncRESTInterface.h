@@ -19,12 +19,13 @@ class AsyncRESTInterface {
 
   public:
     AsyncRESTInterface(AsyncWebServer* server);
-    void begin(const String& page_route, const String& api_route, RESTSettings& settings);
+    void begin(const String& page_route, const String& api_route, RESTSettings& settings, const String& page_name = "Settings");
     void onChange(ChangeHandler handler);
 
   protected:
     String          page_route    = "";
     String          api_route     = "";
+    String          page_name     = "";
     AsyncWebServer* server        = nullptr;
     RESTSettings*   settings      = nullptr;
     ChangeHandler   changeHandler = nullptr;

@@ -4,7 +4,7 @@ const char* webPage = R"HTMLPAGE(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Settings</title>
+    <title>%PAGE_NAME%</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,7 +51,7 @@ const char* webPage = R"HTMLPAGE(
     </style>
 </head>
 <body>
-    <h1>Einstellungen</h1>
+    <h1>%PAGE_NAME%</h1>
     <div id="form-container"></div>
     <button onclick="submitSettings()">speichern</button>
 
